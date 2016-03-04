@@ -57,8 +57,10 @@ allstar.plot = ggplot(data_figs_sum, aes(x = allstar_break, y = wins_perc)) +
         legend.position="none", legend.key=element_blank(),
         strip.background = element_rect(color="white", fill="white"))
 
+# Write figure to a pdf in the 'figures' folder
 pdf("figures/allstar.pdf")
 allstar.plot
+# Close pdf call
 dev.off()
 
 # Posey walked or not
@@ -83,8 +85,10 @@ posey_walked.plot = ggplot(data_posey_figs_sum, aes(x = walked, y = wins_perc)) 
         legend.position="none", legend.key=element_blank(),
         strip.background = element_rect(color="white", fill="white"))
 
+# Write figure to a pdf in the 'figures' folder
 pdf("figures/posey_walked.pdf")
 posey_walked.plot
+# Close pdf call
 dev.off()
 
 
