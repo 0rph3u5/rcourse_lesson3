@@ -7,12 +7,14 @@ source("scripts/rcourse_lesson3_cleaning.R")
 
 
 ## ORGANIZE DATA ####
+# Full season data
 data_stats = data_clean
 
+# Player specific data
 data_posey_stats = data_posey_clean
 
 
-## BUILD MODEL - FULL DATA SET ####
+## BUILD MODEL - FULL SEASON DATA ####
 # Make logistic regression model
 allstar.glm = glm(win ~ allstar_break, family = "binomial", data = data_stats)
 
@@ -23,7 +25,7 @@ allstar.glm_sum = summary(allstar.glm)
 allstar.glm_sum
 
 
-## BUILD MODEL - POSEY ####
+## BUILD MODEL - PLAYER SPECIFIC DATA ####
 # Make logistic regression model
 posey_walked.glm = glm(win ~ walked, family = "binomial", data = data_posey_stats)
 
