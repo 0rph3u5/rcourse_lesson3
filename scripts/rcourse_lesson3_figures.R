@@ -12,7 +12,7 @@ data_figs = data_clean %>%
   # Change order of level of variables for figure
   mutate(allstar_break = factor(allstar_break, levels = c("before", "after")))
 
-# Summarise data by All Star break
+# Summarise full season data by All-Star break
 data_figs_sum = data_figs %>%
   # Select what to group the data by
   group_by(allstar_break) %>%
@@ -21,10 +21,10 @@ data_figs_sum = data_figs %>%
   # Ungroup data
   ungroup()
 
-# Posey data
+# Player specific data
 data_posey_figs = data_posey_clean
 
-# Summarise data by if walked or not
+# Summarise player specific data by if walked or not
 data_posey_figs_sum = data_posey_figs %>%
   # Select what to group the data by
   group_by(walked) %>%
@@ -35,16 +35,16 @@ data_posey_figs_sum = data_posey_figs %>%
   
 
 ## MAKE FIGURES ####
-# All star break
+# All-Star break
 allstar.plot = ggplot(data_figs_sum, aes(x = allstar_break, y = wins_perc)) +
   # Make the figure a barplot
   geom_bar(stat = "identity") +
   # Set y-axis to range from 0 to 100
   ylim(0, 100) +
   # Add a title
-  ggtitle("Percentage of Games Won\nBefore and After All Star Break") +
+  ggtitle("Percentage of Games Won\nBefore and After All-Star Break") +
   # Customize the x-axis
-  xlab("Before of after All Star break") +
+  xlab("Before or after All-Star break") +
   # Customize the y-axis
   ylab("Percentage of games won") +
   # Remove dark background

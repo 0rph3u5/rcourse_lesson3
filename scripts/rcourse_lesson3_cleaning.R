@@ -15,7 +15,7 @@ data_posey = read.table("data/rcourse_lesson3_data_posey.txt", header=T, sep="\t
 data_clean = data %>%
   # Make a column for if the Giants were the home or visiting team
   mutate(home_visitor = ifelse(home_team == "SFN", "home", "visitor")) %>%
-  # Make a column for if the game was before or after the All Star break
+  # Make a column for if the game was before or after the All-Star break
   mutate(allstar_break = ifelse(date < 20100713, "before", "after")) %>%
   # Make win-loss column
   mutate(win = ifelse(home_team == "SFN" & home_score > visitor_score, 1,
