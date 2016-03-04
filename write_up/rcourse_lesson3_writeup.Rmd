@@ -2,7 +2,7 @@
 title: 'R Course: Lesson 3'
 author: "Page Piccinini"
 date: "March 3, 2016"
-output: pdf_document
+output: html_document
 ---
 ```{r, echo=FALSE}
 load("rcourse_lesson3_environment.RData")
@@ -10,20 +10,20 @@ load("rcourse_lesson3_environment.RData")
 
 # Introduction
 
-I analyzed the Giants' 2010 World Series winning season to see what could significantly predict games they won. I looked both full season data (all 162 games) and games specific to when Buster Posey was playing.
+I analyzed the Giants' 2010 World Series winning season to see what could significantly predict games they won. I looked at both full season data (all 162 games) and games specific to when Buster Posey was playing.
 
 
 # Results
 
 ## Full Season Data
 
-For the full season data I tested for an effect of whether the Giants had more wins after the All Star break or before the All Star break. Initial visual examination of the data suggests that numerically they won a higher percentage of games after the All Star break, but the effect looks very small.
+For the full season data I tested for an effect of whether the Giants had more wins after the All-Star break or before the All-Star break. Initial visual examination of the data suggests that numerically they won a higher percentage of games after the All-Star break, but the effect looks very small.
 
 ```{r, echo=FALSE, fig.align='center'}
 allstar.plot
 ```
 
-To test this effect I ran a logistic regression with win or loss as the dependent variable and before or after the All Star break as the independent variable. There was no significant effect of the All Star break.
+To test this effect I ran a logistic regression with win or loss as the dependent variable and before or after the All-Star break as the independent variable. There was no significant effect of the All-Star break.
 
 ```{r}
 allstar.glm_sum
@@ -31,7 +31,7 @@ allstar.glm_sum
 
 ## Buster Posey Data
 
-The second analysis focused on games where Buster Posey played. I wanted to see if the whether Posey was walked or not had any effect on if the Giants won or lost the game. Visual inspection of the data suggests the Giants were much more likely to win if Posey had been walked at least once in the game.
+The second analysis focused on games where Buster Posey played. I wanted to see if whether Posey was walked or not had any effect on if the Giants won or lost the game. Visual inspection of the data suggests the Giants were much more likely to win if Posey had been walked at least once in the game.
 
 ```{r, echo=FALSE, fig.align='center'}
 posey_walked.plot
@@ -46,4 +46,4 @@ posey_walked.glm_sum
 
 # Conclusion
 
-The All Star break had no significant effect on the Giants' road to the 2010 World Series, but Posey being walked did.
+The All-Star break had no significant effect on the Giants' road to the 2010 World Series, but Posey being walked did.
