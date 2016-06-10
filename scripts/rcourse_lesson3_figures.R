@@ -48,14 +48,9 @@ allstar.plot = ggplot(data_figs_sum, aes(x = allstar_break, y = wins_perc)) +
   # Customize the y-axis
   ylab("Percentage of games won") +
   # Remove dark background
-  theme_bw() +
+  theme_classic() +
   # Additional paramaters for displaying plot
-  theme(text=element_text(size=18), title=element_text(size=18),
-        panel.border = element_blank(),
-        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        axis.line = element_line(colour = "black"),
-        legend.position="none", legend.key=element_blank(),
-        strip.background = element_rect(color="white", fill="white"))
+  theme(text=element_text(size=18), title=element_text(size=18))
 
 # Write figure to a pdf in the 'figures' folder
 pdf("figures/allstar.pdf")
@@ -76,14 +71,9 @@ posey_walked.plot = ggplot(data_posey_figs_sum, aes(x = walked, y = wins_perc)) 
   # Custoize the y-axis
   ylab("Percentage of games won") +
   # Remove dark background
-  theme_bw() +
+  theme_classic() +
   # Additional paramaters for displaying plot
-  theme(text=element_text(size=18), title=element_text(size=18),
-        panel.border = element_blank(),
-        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-        axis.line = element_line(colour = "black"),
-        legend.position="none", legend.key=element_blank(),
-        strip.background = element_rect(color="white", fill="white"))
+  theme(text=element_text(size=18), title=element_text(size=18))
 
 # Write figure to a pdf in the 'figures' folder
 pdf("figures/posey_walked.pdf")
